@@ -25,7 +25,7 @@ body {
 }
 
 .nav-link {
-	@apply text-lg text-center text-white hover:text-gray-300 transition-colors duration-300;
+	@apply text-lg text-center text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer;
 }
 
 @media (prefers-color-scheme: light) {

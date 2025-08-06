@@ -1,11 +1,21 @@
 <script setup>
+import {ref} from 'vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import LoginPopup from "./components/LoginPopup.vue"
+
+const loginPopup = ref(null)
+
+function openLogin() {
+  if (loginPopup.value) {
+    loginPopup.value.open()
+  }
+}
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col">
-    <Header/>
+    <Header @open-login="openLogin"/>
 
     <main class="flex-1">
       <section class="container-box py-8">
@@ -16,4 +26,6 @@ import Footer from './components/Footer.vue'
 
     <Footer/>
   </div>
+
+  <LoginPopup ref="loginPopup"/>
 </template>
